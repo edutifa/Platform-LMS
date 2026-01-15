@@ -11,12 +11,12 @@ export function LandingHero() {
       <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* Kiri - Konten Teks */}
         <div className="flex-1 text-center md:text-left space-y-6">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
             <InfoIcon className="h-4 w-4 text-[#004aad]" />
             Belajar Teknologi Terkini
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            Edutifa Bakal Bantu Kamu
+            Edutifa Bakal <br />Bantu Kamu
           </h1>
           <RotatingText
             text={[
