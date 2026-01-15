@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function LandingHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-zinc-50 via-white to-zinc-100 dark:from-black dark:via-zinc-950 dark:to-zinc-900">
+    <section className="relative overflow-hidden bg-linear-to-b from-zinc-50 via-white to-zinc-100 dark:from-black dark:via-zinc-950 dark:to-zinc-900">
       <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center gap-10 px-6 py-20 text-center md:flex-row md:items-start md:text-left">
         <div className="flex-1 space-y-6">
           <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 dark:ring-zinc-800">
@@ -12,7 +12,7 @@ export function LandingHero() {
           </span>
           <h1 className="text-balance text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl dark:text-zinc-50">
             Tingkatkan skill Anda dengan
-            <span className="bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-500 via-sky-500 to-cyan-400 bg-clip-text text-transparent">
               {" "}
               kelas interaktif berkualitas.
             </span>
@@ -48,7 +48,7 @@ export function LandingHero() {
 
         <div className="relative mt-4 flex flex-1 justify-center md:mt-0">
           <div className="relative w-full max-w-md">
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-blue-500/10 via-sky-400/5 to-emerald-300/10 blur-2xl" />
+            <div className="absolute -inset-6 rounded-3xl bg-linear-to-tr from-blue-500/10 via-sky-400/5 to-emerald-300/10 blur-2xl" />
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white/80 p-4 shadow-xl backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/70">
               <div className="flex items-center justify-between pb-3 text-xs text-zinc-500 dark:text-zinc-400">
                 <span>Kelas yang sedang berlangsung</span>
