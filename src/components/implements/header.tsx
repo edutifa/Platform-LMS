@@ -24,14 +24,9 @@ export function Header() {
         <div className="w-32 md:w-42">
           <a href="/" className="flex flex-row items-center gap-1">
             <img
-              src="/assets/logos/logo-white.svg"
-              alt="Logo Edutifa"
-              className="hidden dark:block"
-            />
-            <img
               src="/assets/logos/logo-blue.svg"
               alt="Logo Edutifa"
-              className="dark:hidden"
+              className="w-full h-auto"
             />
           </a>
         </div>
