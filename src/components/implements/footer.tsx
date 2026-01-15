@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 export function LandingFooter() {
@@ -11,24 +12,51 @@ export function LandingFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Kolom 1: Brand & Deskripsi */}
           <div className="space-y-4">
-            <a href="/" className="flex flex-row items-center gap-1">
-                <img src="./assets/logos/logo-white.svg" alt="Logo" className="hidden dark:block" />
-                <img src="./assets/logos/logo-blue.svg" alt="Logo" className="dark:hidden" />
-            </a>
-            <p className="text-muted-foreground text-sm">
-              Platform belajar coding, data, dan teknologi terkini dengan materi praktis dan proyek nyata.
+            <Link href="/" className="flex flex-row items-center gap-1">
+              <Image
+                src="/assets/logos/logo-white.svg"
+                alt="Logo Edutifa"
+                width={160}
+                height={40}
+                className="hidden dark:block h-12 md:h-16 w-auto"
+              />
+              <Image
+                src="/assets/logos/logo-blue.svg"
+                alt="Logo Edutifa"
+                width={160}
+                height={40}
+                className="dark:hidden h-12 md:h-16 w-auto"
+              />
+            </Link>
+            <p className="text-sm font-semibold text-foreground">
+              PT Edukasi Teknologi Informatika
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Jl. Jawa no 8b, Pekanbaru, Riau. Indonesia. 28285.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Github className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="mailto:hello@edutifa.id" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="mailto:hello@edutifa.id"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
@@ -38,10 +66,38 @@ export function LandingFooter() {
           <div>
             <h4 className="font-semibold mb-4">Produk</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/courses" className="hover:text-foreground transition-colors">Kursus</Link></li>
-              <li><Link href="/bootcamp" className="hover:text-foreground transition-colors">Bootcamp</Link></li>
-              <li><Link href="/mentorship" className="hover:text-foreground transition-colors">Mentorship</Link></li>
-              <li><Link href="/career" className="hover:text-foreground transition-colors">Karier</Link></li>
+              <li>
+                <Link
+                  href="/courses"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Kursus
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/bootcamp"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Bootcamp
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mentorship"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Mentorship
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/career"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Karier
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -49,10 +105,38 @@ export function LandingFooter() {
           <div>
             <h4 className="font-semibold mb-4">Perusahaan</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-foreground transition-colors">Tentang Kami</Link></li>
-              <li><Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-foreground transition-colors">Kontak</Link></li>
-              <li><Link href="/faq" className="hover:text-foreground transition-colors">FAQ</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Tentang Kami
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Kontak
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="hover:text-foreground transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -60,9 +144,30 @@ export function LandingFooter() {
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/privacy" className="hover:text-foreground transition-colors">Kebijakan Privasi</Link></li>
-              <li><Link href="/terms" className="hover:text-foreground transition-colors">Syarat & Ketentuan</Link></li>
-              <li><Link href="/refund" className="hover:text-foreground transition-colors">Kebijakan Pengembalian</Link></li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Kebijakan Privasi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Syarat & Ketentuan
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/refund"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Kebijakan Pengembalian
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

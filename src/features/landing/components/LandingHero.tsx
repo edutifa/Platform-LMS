@@ -57,8 +57,8 @@ export function LandingHero() {
               sizes="(min-width: 768px) 400px, 100vw"
             />
 
-            {/* Floating cards */}
-            <div className="floating-card floating-card-left">
+            {/* Floating cards - hanya tampil di md ke atas */}
+            <div className="hidden md:flex floating-card floating-card-left">
               <span className="text-xs font-medium text-muted-foreground">
                 Belajar jadi
               </span>
@@ -67,7 +67,7 @@ export function LandingHero() {
               </span>
             </div>
 
-            <div className="floating-card floating-card-top-right">
+            <div className="hidden md:flex floating-card floating-card-top-right">
               <span className="text-xs font-medium text-muted-foreground">
                 Level up ke
               </span>
@@ -76,7 +76,7 @@ export function LandingHero() {
               </span>
             </div>
 
-            <div className="floating-card floating-card-bottom-right">
+            <div className="hidden md:flex floating-card floating-card-bottom-right">
               <span className="text-xs font-medium text-muted-foreground">
                 Siap kerja sebagai
               </span>

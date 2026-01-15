@@ -131,7 +131,6 @@ body {
 /* Floating cards around hero image */
 .floating-card {
   position: absolute;
-  display: flex;
   flex-direction: column;
   gap: 2px;
   padding: 0.6rem 0.9rem;
