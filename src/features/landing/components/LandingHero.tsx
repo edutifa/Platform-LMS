@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RotatingText } from "@/components/ui/shadcn-io/rotating-text";
 import { InfoIcon, UserCheck } from "lucide-react";
+import Image from "next/image";
 
 export function LandingHero() {
   return (
@@ -43,10 +44,13 @@ export function LandingHero() {
         {/* Kanan - Gambar */}
         <div className="flex-1 flex justify-end">
           <div className="relative w-full max-w-md aspect-4/3">
-            <img
+            <Image
               src="https://placehold.co/500x400" // Ganti dengan path gambar Anda
               alt="Ilustrasi belajar di Edutifa"
+              fill
               className="object-contain"
+              unoptimized
+              sizes="(min-width: 768px) 400px, 100vw"
             />
           </div>
         </div>
