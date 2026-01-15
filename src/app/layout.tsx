@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="./assets/logos/icon-blue.svg" sizes="any" />
       </head>
-      <body className={`${spaceGrotesk.variable} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${spaceGrotesk.variable} antialiased`}>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
