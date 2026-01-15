@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function LandingHero() {
   return (
-    <section className="container mx-auto px-4 py-20 md:pt-32 max-w-6xl">
+    <section className="container mx-auto px-4 pt-24 md:pt-32 max-w-6xl">
       <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* Kiri - Konten Teks */}
         <div className="flex-1 text-center md:text-left space-y-6">
@@ -19,7 +19,7 @@ export function LandingHero() {
             Edutifa Bakal Bantu Kamu
           </h1>
           <RotatingText
-            text={["Belajar Buat Website", "Vibe Coding", "Cuan 100jt/Bulan"]}
+            text={["Belajar Fundamental", "Belajar Buat Website", "Belajar Vibe Coding"]}
             duration={1500}
             className="text-[#004aad] text-3xl sm:text-4xl md:text-5xl font-bold text-center"
           />
@@ -45,7 +45,7 @@ export function LandingHero() {
         <div className="flex-1 flex justify-end">
           <div className="relative w-full max-w-md aspect-4/3">
             <Image
-              src="https://placehold.co/500x400" // Ganti dengan path gambar Anda
+              src="./assets/images/hero.svg" // Ganti dengan path gambar Anda
               alt="Ilustrasi belajar di Edutifa"
               fill
               className="object-contain"
