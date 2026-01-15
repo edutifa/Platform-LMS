@@ -46,7 +46,8 @@
 }
 
 body {
-  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 :root {
@@ -124,5 +125,70 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Floating cards around hero image */
+.floating-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.9rem;
+  background: color-mix(in oklab, var(--card) 90%, transparent);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.18);
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  backdrop-filter: blur(18px);
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.floating-card-left {
+  left: -2.25rem;
+  bottom: 20%;
+  animation-name: float-card-left;
+}
+
+.floating-card-top-right {
+  right: -1.5rem;
+  top: 8%;
+  animation-name: float-card-top-right;
+}
+
+.floating-card-bottom-right {
+  right: -2rem;
+  bottom: 8%;
+  animation-name: float-card-bottom-right;
+}
+
+@keyframes float-card-left {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) scale(1.02);
+  }
+}
+
+@keyframes float-card-top-right {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0) scale(1.02);
+  }
+}
+
+@keyframes float-card-bottom-right {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) scale(1.02);
   }
 }

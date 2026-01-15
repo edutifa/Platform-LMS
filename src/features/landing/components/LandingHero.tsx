@@ -19,7 +19,11 @@ export function LandingHero() {
             Edutifa Bakal Bantu Kamu
           </h1>
           <RotatingText
-            text={["Belajar Fundamental", "Belajar Buat Website", "Belajar Vibe Coding"]}
+            text={[
+              "Belajar Fundamental",
+              "Belajar Buat Website",
+              "Belajar Vibe Coding",
+            ]}
             duration={1500}
             className="text-[#004aad] text-3xl sm:text-4xl md:text-5xl font-bold text-center"
           />
@@ -41,7 +45,7 @@ export function LandingHero() {
           </div>
         </div>
 
-        {/* Kanan - Gambar */}
+        {/* Kanan - Gambar + Floating Cards */}
         <div className="flex-1 flex justify-end">
           <div className="relative w-full max-w-md aspect-4/3">
             <Image
@@ -52,6 +56,34 @@ export function LandingHero() {
               unoptimized
               sizes="(min-width: 768px) 400px, 100vw"
             />
+
+            {/* Floating cards */}
+            <div className="floating-card floating-card-left">
+              <span className="text-xs font-medium text-muted-foreground">
+                Belajar jadi
+              </span>
+              <span className="text-sm font-semibold text-foreground">
+                Web Developer
+              </span>
+            </div>
+
+            <div className="floating-card floating-card-top-right">
+              <span className="text-xs font-medium text-muted-foreground">
+                Level up ke
+              </span>
+              <span className="text-sm font-semibold text-foreground">
+                AI Engineer
+              </span>
+            </div>
+
+            <div className="floating-card floating-card-bottom-right">
+              <span className="text-xs font-medium text-muted-foreground">
+                Siap kerja sebagai
+              </span>
+              <span className="text-sm font-semibold text-foreground">
+                Mobile Developer
+              </span>
+            </div>
           </div>
         </div>
       </div>
