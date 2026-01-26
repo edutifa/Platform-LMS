@@ -26,13 +26,13 @@ const myCourses: Course[] = [
     id: 1,
     title: "Fullstack Web Development",
     progress: 80,
-    imageSrc: "/assets/images/sample-banner-course.png",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
   },
   {
     id: 2,
     title: "Mobile Development",
     progress: 100,
-    imageSrc: "/assets/images/sample-banner-course.png",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
   },
 ];
 
@@ -47,10 +47,10 @@ export default function Page() {
             {myCourses.map((course) => (
               <Link
                 key={course.id}
-                href={`/detail/${course.id}`}
+                href={`/course/detail/${course.id}`}
                 className="block"
               >
-                <Card className="overflow-hidden rounded-2xl border border-zinc-100 bg-white p-0 shadow-sm hover:shadow-md">
+                <Card className="overflow-hidden rounded-2xl border border-zinc-100 bg-white p-0 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 gap-0 py-0">
                   <CardHeader className="p-0">
                     <div className="relative h-44 w-full">
                       <Image

@@ -4,6 +4,7 @@ import "../shared/styles/globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Header } from "@/components/implements/header";
 import LeftSidebar from "@/components/implements/left-sidebar";
+import HeaderSpacer from "@/components/implements/header-spacer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="./assets/logos/icon-blue.svg" sizes="any" />
       </head>
-      <body className={`${spaceGrotesk.variable} antialiased`}>
+      <body
+        className={`${spaceGrotesk.variable} antialiased bg-zinc-100 dark:bg-black font-sans overflow-x-hidden`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,8 +37,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {/* spacer equal to header height so fixed header doesn't overlap content */}
-          <div className="h-28" />
+          {/* conditional spacer so only account/signup pages get the extra top offset */}
+          <HeaderSpacer />
           <div className="container mx-auto max-w-6xl">
             <div className="flex gap-6">
               <LeftSidebar />

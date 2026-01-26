@@ -1,4 +1,3 @@
-import { Header } from "@/components/implements/header";
 import LandingFooter from "@/components/implements/footer";
 import { getCourseDetailById } from "@/features/detail/dto/DetailDTO";
 import { CourseDetailBanner } from "@/features/detail/components/CourseDetailBanner";
@@ -25,8 +24,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-100 font-sans dark:bg-black">
-      <Header />
+    <div className="min-h-screen">
       <main>
         <CourseDetailBanner course={course} />
         <CourseAboutSection about={course.about} />

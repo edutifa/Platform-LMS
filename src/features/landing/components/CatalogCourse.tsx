@@ -45,17 +45,41 @@ const courses: Course[] = [
     discountLabel: "77% Off",
     imageSrc: "/assets/images/sample-banner-course-1.png",
   },
+  {
+    id: 4,
+    title: "Fundamental Tailwind CSS untuk Frontend Developer",
+    price: "Rp 199.000",
+    originalPrice: "Rp 850.000",
+    discountLabel: "77% Off",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
+  },
+  {
+    id: 5,
+    title: "Fundamental Tailwind CSS untuk Frontend Developer",
+    price: "Rp 199.000",
+    originalPrice: "Rp 850.000",
+    discountLabel: "77% Off",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
+  },
 ];
 
 export function CatalogCourse() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-10">
-      <h2 className="mb-6 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-        Katalog Kelas Populer
+      <h2 className="mb-2 text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-50">
+        Course Terbaru Kami
       </h2>
+      <p className="mb-6 text-sm text-muted-foreground">
+        Kami menyediakan berbagai macam course yang dapat membantu kamu dalam
+        mengembangkan kemampuan dan keterampilan digital.
+      </p>
       <div className="grid gap-6 md:grid-cols-3">
         {courses.map((course) => (
-          <Link key={course.id} href={`/detail/${course.id}`} className="block">
+          <Link
+            key={course.id}
+            href={`/course/detail/${course.id}`}
+            className="block"
+          >
             <Card className="overflow-hidden rounded-2xl border border-zinc-100 bg-white p-0 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 gap-0 py-0">
               <CardHeader className="p-0">
                 <div className="relative h-44 w-full">

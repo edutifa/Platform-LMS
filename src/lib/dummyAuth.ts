@@ -9,7 +9,7 @@ let _draft: Partial<User> | null = null;
 let _user: User | null = {
   name: "Budi Santoso",
   email: "budi@example.com",
-  avatarUrl: "/assets/images/avatar-sample.jpg",
+  avatarUrl: "/assets/images/photo-profile.png",
   personalGoal: "Belajar Web Development",
 };
 
