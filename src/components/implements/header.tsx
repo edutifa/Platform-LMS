@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,29 +13,35 @@ import {
 import { ModeToggle } from "../ui/mode-toggle";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Crown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SignInModal from "./signin-modal";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSignOpen, setIsSignOpen] = useState(false);
 
   return (
     <div className="flex justify-center w-full fixed top-0 z-50 bg-background/90 backdrop-blur-sm">
       <div className="flex flex-row items-center justify-between p-2 w-full max-w-6xl">
         {/* Logo */}
         <div className="w-32 md:w-42">
-          <a href="/" className="flex flex-row items-center gap-1">
-            <img
+          <Link href="/" className="flex flex-row items-center gap-1">
+            <Image
               src="/assets/logos/logo-white.svg"
               alt="Logo Edutifa"
+              width={160}
+              height={40}
               className="hidden dark:block"
             />
-            <img
+            <Image
               src="/assets/logos/logo-blue.svg"
               alt="Logo Edutifa"
+              width={160}
+              height={40}
               className="dark:hidden"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation - hidden on mobile */}
@@ -78,28 +86,18 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Right Section: Stats + Mode Toggle + Hamburger */}
-        <div className="flex items-center justify-end gap-2 md:w-42">
-          <div className="flex items-center gap-1 px-4 py-2">
-            <Crown className="h-4 w-4 text-blue-500 dark:text-blue-400" />
-            <div className="flex -space-x-1">
-              <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
-                <AvatarFallback>LR</AvatarFallback>
-              </Avatar>
-              <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                <AvatarFallback>ER</AvatarFallback>
-              </Avatar>
-            </div>
-            <span className="text-xs font-medium text-primary">400+</span>
-          </div>
-
+        {/* Right Section: Mode Toggle + Auth buttons + Hamburger */}
+        <div className="flex items-center justify-end gap-2">
           <ModeToggle />
+
+          <div className="hidden sm:flex gap-2 items-center ml-2">
+            <Button asChild variant="outline" size="sm">
+              <Link href="/signup">Sign up</Link>
+            </Button>
+            <Button size="sm" onClick={() => setIsSignOpen(true)}>
+              Sign in
+            </Button>
+          </div>
 
           {/* Hamburger Button (Mobile Only) */}
           <button
@@ -166,6 +164,11 @@ export function Header() {
           </div>
         </div>
       )}
+      <SignInModal
+        open={isSignOpen}
+        onClose={() => setIsSignOpen(false)}
+        onSignIn={(data) => console.log("signin", data)}
+      />
     </div>
   );
 }
