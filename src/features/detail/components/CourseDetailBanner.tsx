@@ -41,7 +41,7 @@ export function CourseDetailBanner({ course }: Props) {
               className="bg-[#004aad] text-sm font-semibold text-white hover:bg-blue-700 md:text-base"
               asChild
             >
-              <a href="#biaya">Lihat Biaya & Daftar</a>
+              <a href="#biaya">Beli Sekarang</a>
             </Button>
           </div>
         </div>

@@ -36,7 +36,7 @@ export const courseDetails: CourseDetail[] = [
     title: "Full Stack Next JS : Realtime Point Of Sale Apps",
     shortDescription:
       "Bangun aplikasi Point of Sale realtime dengan Next.js, TypeScript, dan teknologi modern yang siap production.",
-    bannerImage: "/assets/images/sample-banner-course.png",
+    bannerImage: "/assets/images/sample-banner-course-1.png",
     about:
       "Di kelas ini kamu akan belajar membangun aplikasi Point of Sale (POS) berbasis web menggunakan Next.js 14, TypeScript, dan Prisma. Mulai dari autentikasi, pengelolaan produk, transaksi, hingga laporan realtime.",
     benefits: [
@@ -95,7 +95,7 @@ export const courseDetails: CourseDetail[] = [
     title: "Mastering React & TypeScript untuk Production",
     shortDescription:
       "Dalami React dan TypeScript hingga siap membangun aplikasi production-grade.",
-    bannerImage: "/assets/images/sample-banner-course.png",
+    bannerImage: "/assets/images/sample-banner-course-1.png",
     about:
       "Kelas ini fokus pada implementasi React dan TypeScript di proyek nyata, termasuk pattern, testing, dan performance.",
     benefits: [
@@ -136,7 +136,7 @@ export const courseDetails: CourseDetail[] = [
     title: "Fundamental Tailwind CSS untuk Frontend Developer",
     shortDescription:
       "Pelajari Tailwind CSS dari dasar hingga siap digunakan di project production.",
-    bannerImage: "/assets/images/sample-banner-course.png",
+    bannerImage: "/assets/images/sample-banner-course-1.png",
     about:
       "Kelas ini membahas utility-first CSS, best practice styling, dan integrasi dengan framework modern.",
     benefits: [

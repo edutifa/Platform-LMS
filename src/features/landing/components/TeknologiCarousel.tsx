@@ -53,10 +53,10 @@ export function CarouselPlugin() {
       {/* Wrapper relatif untuk overlay fade */}
       <div className="flex justify-center relative">
         {/* Fade kiri */}
-        <div className="absolute left-0 top-0 h-full w-32 bg-linear-to-r from-zinc-100 to-transparent dark:from-neutral-950 z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 h-full w-32 bg-linear-to-r from-zinc-100 dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
 
         {/* Fade kanan */}
-        <div className="absolute right-0 top-0 h-full w-32 bg-linear-to-l from-zinc-100 to-transparent dark:from-neutral-950 z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-32 bg-linear-to-l from-zinc-100 dark:from-neutral-950 to-transparent z-10 pointer-events-none" />
 
         {/* Embla Carousel */}
         <div className="w-full max-w-6xl overflow-hidden" ref={emblaRef}>

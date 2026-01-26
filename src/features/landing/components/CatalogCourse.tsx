@@ -27,7 +27,7 @@ const courses: Course[] = [
     price: "Rp 345.000",
     originalPrice: "Rp 1.500.000",
     discountLabel: "77% Off",
-    imageSrc: "/assets/images/sample-banner-course.png",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const courses: Course[] = [
     price: "Rp 279.000",
     originalPrice: "Rp 1.200.000",
     discountLabel: "76% Off",
-    imageSrc: "/assets/images/sample-banner-course.png",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const courses: Course[] = [
     price: "Rp 199.000",
     originalPrice: "Rp 850.000",
     discountLabel: "77% Off",
-    imageSrc: "/assets/images/sample-banner-course.png",
+    imageSrc: "/assets/images/sample-banner-course-1.png",
   },
 ];
 
