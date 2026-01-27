@@ -52,7 +52,7 @@ export default function Page() {
   }
 
   return (
-    <Card>
+    <Card className="mb-6">
       <CardHeader>
         <CardTitle>My Profile</CardTitle>
         <CardDescription>Account Details</CardDescription>
@@ -184,9 +184,6 @@ export default function Page() {
               Save
             </Button>
           </div>
-
-          <hr className="my-6" />
-
           {showChangeModal && (
             <div
               role="dialog"
