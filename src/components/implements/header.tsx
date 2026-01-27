@@ -12,9 +12,15 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "../ui/mode-toggle";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Crown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  Menu,
+  X,
+  BookOpen,
+  FileText,
+  CreditCard,
+  User,
+  LogOut,
+} from "lucide-react";
 import SignInModal from "./signin-modal";
 
 export function Header() {
@@ -63,17 +69,13 @@ export function Header() {
                     className="flex flex-row items-center gap-1 px-3 py-1.5 whitespace-nowrap hover:bg-accent rounded-md"
                   >
                     Online Course
-                    <Crown className="inline-block w-4 h-4 ml-2 text-blue-500" />
                   </NavigationMenuLink>
 
                   <NavigationMenuLink
                     href="/bootcamp"
                     className="flex flex-row items-center justify-between gap-1 px-3 py-1.5 whitespace-nowrap hover:bg-accent rounded-md"
                   >
-                    <span className="flex items-center gap-2">
-                      Bootcamp
-                      <Crown className="inline-block w-4 h-4 text-blue-500" />
-                    </span>
+                    <span className="flex items-center gap-2">Bootcamp</span>
                     <span className="ml-2 inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                       Segera Hadir
                     </span>
@@ -85,7 +87,6 @@ export function Header() {
                   >
                     <span className="flex items-center gap-2">
                       Corporate Training
-                      <Crown className="inline-block w-4 h-4 text-blue-500" />
                     </span>
                     <span className="ml-2 inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                       Segera Hadir
@@ -96,10 +97,7 @@ export function Header() {
                     href="/sertifikasi"
                     className="flex flex-row items-center justify-between gap-1 px-3 py-1.5 whitespace-nowrap hover:bg-accent rounded-md"
                   >
-                    <span className="flex items-center gap-2">
-                      Sertifikasi
-                      <Crown className="inline-block w-4 h-4 text-blue-500" />
-                    </span>
+                    <span className="flex items-center gap-2">Sertifikasi</span>
                     <span className="ml-2 inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                       Segera Hadir
                     </span>
@@ -154,33 +152,37 @@ export function Header() {
             </button>
 
             {isProfileOpen && (
-              <div className="absolute right-0 top-full mt-2 w-48 bg-popover border rounded-md shadow-md z-50">
-                <a
-                  href="/my-courses"
-                  className="block px-4 py-2 text-sm hover:bg-accent"
-                  onClick={() => setIsProfileOpen(false)}
-                >
-                  My Courses
-                </a>
+              <div className="absolute right-0 top-full mt-2 w-48 bg-popover border rounded-md shadow-md z-50 p-1">
                 <a
                   href="/my-resume"
-                  className="block px-4 py-2 text-sm hover:bg-accent"
+                  className="px-4 py-2 text-sm hover:bg-accent flex items-center gap-2"
                   onClick={() => setIsProfileOpen(false)}
                 >
+                  <FileText className="w-4 h-4" />
                   My Resume
                 </a>
                 <a
-                  href="/my-transactions"
-                  className="block px-4 py-2 text-sm hover:bg-accent"
+                  href="/my-courses"
+                  className="px-4 py-2 text-sm hover:bg-accent flex items-center gap-2"
                   onClick={() => setIsProfileOpen(false)}
                 >
+                  <BookOpen className="w-4 h-4" />
+                  My Courses
+                </a>
+                <a
+                  href="/my-transactions"
+                  className="px-4 py-2 text-sm hover:bg-accent flex items-center gap-2"
+                  onClick={() => setIsProfileOpen(false)}
+                >
+                  <CreditCard className="w-4 h-4" />
                   My Transactions
                 </a>
                 <a
                   href="/my-profile"
-                  className="block px-4 py-2 text-sm hover:bg-accent"
+                  className="px-4 py-2 text-sm hover:bg-accent flex items-center gap-2"
                   onClick={() => setIsProfileOpen(false)}
                 >
+                  <User className="w-4 h-4" />
                   My Profile
                 </a>
                 <button
@@ -190,7 +192,10 @@ export function Header() {
                     setIsProfileOpen(false);
                   }}
                 >
-                  Sign out
+                  <span className="flex items-center gap-2">
+                    <LogOut className="w-4 h-4" />
+                    Sign out
+                  </span>
                 </button>
               </div>
             )}
@@ -227,65 +232,55 @@ export function Header() {
                 Program
               </button>
               <div className="mt-1 pl-3 space-y-1">
-                <a
+                <link
                   href="/course"
                   className="block px-3 py-1.5 text-sm hover:bg-accent rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="flex items-center gap-2">
-                    Online Course
-                    <Crown className="w-4 h-4 text-blue-500" />
-                  </span>
-                </a>
-                <a
+                  <span className="flex items-center gap-2">Online Course</span>
+                </link>
+                <link
                   href="/bootcamp"
                   className="flex items-center justify-between gap-2 px-3 py-1.5 text-sm hover:bg-accent rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="flex items-center gap-2">
-                    Bootcamp
-                    <Crown className="w-4 h-4 text-blue-500" />
-                  </span>
+                  <span className="flex items-center gap-2">Bootcamp</span>
                   <span className="inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                     Segera Hadir
                   </span>
-                </a>
-                <a
+                </link>
+                <link
                   href="/corporate"
                   className="flex items-center justify-between gap-2 px-3 py-1.5 text-sm hover:bg-accent rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="flex items-center gap-2">
                     Corporate Training
-                    <Crown className="w-4 h-4 text-blue-500" />
                   </span>
                   <span className="inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                     Segera Hadir
                   </span>
-                </a>
-                <a
+                </link>
+                <link
                   href="/sertifikasi"
                   className="flex items-center justify-between gap-2 px-3 py-1.5 text-sm hover:bg-accent rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="flex items-center gap-2">
-                    Sertifikasi
-                    <Crown className="w-4 h-4 text-blue-500" />
-                  </span>
+                  <span className="flex items-center gap-2">Sertifikasi</span>
                   <span className="inline-flex items-center rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5">
                     Segera Hadir
                   </span>
-                </a>
+                </link>
               </div>
             </div>
 
-            <a
+            <link
               href="/informasi-kontak"
               className="px-3 py-2 text-sm"
               onClick={() => setIsMenuOpen(false)}
             >
               Informasi &amp; Kontak
-            </a>
+            </link>
           </div>
         </div>
       )}

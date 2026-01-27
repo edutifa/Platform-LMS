@@ -34,9 +34,9 @@ export default function LeftSidebar() {
     <aside className="hidden md:block">
       <nav className="sticky top-28 z-40">
         <div className="px-2">
-          <div className="w-56 bg-white rounded-2xl shadow-lg p-4">
+          <div className="w-56 bg-white rounded-2xl shadow-lg p-4 border border-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none text-zinc-900 dark:text-zinc-50">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
+              <div className="h-12 w-12 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
                 {user?.avatarUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -45,7 +45,7 @@ export default function LeftSidebar() {
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 dark:bg-blue-900/30 dark:text-blue-300">
                     {(user?.name || "U").slice(0, 1)}
                   </div>
                 )}
@@ -74,20 +74,24 @@ export default function LeftSidebar() {
                       className={
                         "flex items-center gap-3 px-3 py-2 rounded-lg text-sm " +
                         (isActive
-                          ? "bg-blue-50 text-blue-700 font-medium"
-                          : "text-muted-foreground hover:bg-blue-50")
+                          ? "bg-blue-50 text-blue-700 font-medium dark:bg-blue-900/30 dark:text-blue-300"
+                          : "text-muted-foreground hover:bg-blue-50 dark:hover:bg-blue-900/20")
                       }
                     >
                       <span
                         className={
                           "p-2 rounded-md " +
-                          (isActive ? "bg-blue-100" : "bg-blue-50")
+                          (isActive
+                            ? "bg-blue-100 dark:bg-blue-900/30"
+                            : "bg-blue-50 dark:bg-transparent")
                         }
                       >
                         <Icon
                           className={
                             "w-4 h-4 " +
-                            (isActive ? "text-blue-700" : "text-blue-600")
+                            (isActive
+                              ? "text-blue-700 dark:text-blue-300"
+                              : "text-blue-600 dark:text-blue-300")
                           }
                         />
                       </span>

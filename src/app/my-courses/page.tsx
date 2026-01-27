@@ -7,6 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -38,55 +39,56 @@ const myCourses: Course[] = [
 
 export default function Page() {
   return (
-    <main className="container mx-auto p-6 max-w-6xl">
-      <div className="flex gap-6">
-        <div className="flex-1">
-          <h1 className="text-2xl font-semibold mb-4">My Courses</h1>
+    <Card>
+      <CardHeader>
+        <CardTitle>My Courses</CardTitle>
+        <CardDescription>Your enrolled courses</CardDescription>
+      </CardHeader>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {myCourses.map((course) => (
-              <Link
-                key={course.id}
-                href={`/course/detail/${course.id}`}
-                className="block"
-              >
-                <Card className="overflow-hidden rounded-2xl border border-zinc-100 bg-white p-0 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 gap-0 py-0">
-                  <CardHeader className="p-0">
-                    <div className="relative h-44 w-full">
-                      <Image
-                        src={course.imageSrc}
-                        alt={course.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2 px-5 py-4">
-                    <CardTitle className="text-sm font-semibold">
-                      {course.title}
-                    </CardTitle>
-                    <div className="text-sm text-muted-foreground">
-                      Progress: {course.progress}%
-                    </div>
-                    <div className="w-full bg-slate-100 h-2 rounded-full mt-2">
-                      <div
-                        className="h-2 bg-blue-600 rounded-full"
-                        style={{ width: `${course.progress}%` }}
-                      />
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex items-center justify-between border-t border-zinc-100 pb-4 pt-3">
-                    <Button size="sm">Lanjutkan</Button>
-                    <div className="text-xs text-muted-foreground">
-                      {course.progress}%
-                    </div>
-                  </CardFooter>
-                </Card>
-              </Link>
-            ))}
-          </div>
+      <CardContent>
+        <div className="grid gap-6 md:grid-cols-2">
+          {myCourses.map((course) => (
+            <Link
+              key={course.id}
+              href={`/course/detail/${course.id}`}
+              className="block"
+            >
+              <Card className="overflow-hidden rounded-2xl border border-zinc-100 bg-white p-0 shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 gap-0 py-0">
+                <CardHeader className="p-0">
+                  <div className="relative h-44 w-full">
+                    <Image
+                      src={course.imageSrc}
+                      alt={course.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-2 px-5 py-4">
+                  <CardTitle className="text-sm font-semibold">
+                    {course.title}
+                  </CardTitle>
+                  <div className="text-sm text-muted-foreground">
+                    Progress: {course.progress}%
+                  </div>
+                  <div className="w-full bg-slate-100 h-2 rounded-full mt-2">
+                    <div
+                      className="h-2 bg-blue-600 rounded-full"
+                      style={{ width: `${course.progress}%` }}
+                    />
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center justify-between border-t border-zinc-100 pb-4 pt-3">
+                  <Button size="sm">Lanjutkan</Button>
+                  <div className="text-xs text-muted-foreground">
+                    {course.progress}%
+                  </div>
+                </CardFooter>
+              </Card>
+            </Link>
+          ))}
         </div>
-      </div>
-    </main>
+      </CardContent>
+    </Card>
   );
 }

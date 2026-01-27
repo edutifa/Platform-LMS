@@ -2,6 +2,13 @@
 
 import React from "react";
 import { getUser } from "@/lib/dummyAuth";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
 
 function RadarChart({ size = 640 }: { size?: number }) {
   const cx = size / 2;
@@ -35,7 +42,7 @@ function RadarChart({ size = 640 }: { size?: number }) {
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <g fill="none" stroke="#e6e6e9">
+      <g fill="none" className="stroke-zinc-200 dark:stroke-zinc-700">
         {grid.map((d, i) => (
           <polygon key={i} points={d} strokeWidth={1} />
         ))}
@@ -43,18 +50,20 @@ function RadarChart({ size = 640 }: { size?: number }) {
 
       <g
         fill="none"
-        stroke="#7aa2ff"
         strokeWidth={3}
         strokeLinecap="round"
         strokeLinejoin="round"
+        stroke="currentColor"
+        className="text-blue-400 dark:text-blue-300"
       >
         <polygon
           points={points.map((p) => p.join(",")).join(" ")}
-          fill="rgba(122,162,255,0.08)"
+          fill="currentColor"
+          fillOpacity={0.08}
         />
       </g>
 
-      <g fontSize={11} fill="#6b7280">
+      <g fontSize={11} className="fill-zinc-600 dark:fill-zinc-300">
         {axes.map((label, i) => {
           const angle = (i / axes.length) * Math.PI * 2 - Math.PI / 2;
           const lx = cx + (radius + 28) * Math.cos(angle);
@@ -80,62 +89,48 @@ export default function MyResumePage() {
   const user = getUser();
 
   return (
-    <div className="min-h-screen p-2">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-start gap-6">
-          <div className="flex-1">
-            <div className="bg-white rounded-lg shadow p-6">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h1 className="text-2xl font-semibold">My Resume</h1>
-                  <div className="text-sm text-muted-foreground">
-                    Last 7 days
-                  </div>
-                </div>
-              </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>My Resume</CardTitle>
+        <CardDescription>Last 7 days</CardDescription>
+      </CardHeader>
 
-              <div className="flex justify-center py-6">
-                <RadarChart size={720} />
-              </div>
-
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-2">
-                  <h2 className="text-lg font-semibold mb-2">
-                    Recommendations
-                  </h2>
-                  <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                    <li>
-                      Focus on Fullstack path — take the Fullstack Web
-                      Development course to increase competency.
-                    </li>
-                    <li>
-                      Practice cloud fundamentals and DevOps basics to improve
-                      Cloud/DevOps score.
-                    </li>
-                    <li>
-                      Try a short Product/UI course to strengthen UI/UX skills.
-                    </li>
-                    <li>
-                      Complete a mini project integrating backend and frontend
-                      to boost measurable progress.
-                    </li>
-                  </ul>
-                </div>
-
-                <aside className="col-span-1 bg-slate-50 rounded-lg p-4">
-                  <h3 className="text-sm font-medium mb-2">Profile</h3>
-                  <div className="text-sm text-muted-foreground">
-                    {user?.name || "Nama Pengguna"}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-2">
-                    Goal: {user?.personalGoal || "-"}
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </div>
+      <CardContent>
+        <div className="flex justify-center py-6">
+          <RadarChart size={720} />
         </div>
-      </div>
-    </div>
+
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="col-span-2">
+            <h2 className="text-lg font-semibold mb-2">Recommendations</h2>
+            <ul className="list-disc pl-5 text-sm text-muted-foreground">
+              <li>
+                Focus on Fullstack path — take the Fullstack Web Development
+                course to increase competency.
+              </li>
+              <li>
+                Practice cloud fundamentals and DevOps basics to improve
+                Cloud/DevOps score.
+              </li>
+              <li>Try a short Product/UI course to strengthen UI/UX skills.</li>
+              <li>
+                Complete a mini project integrating backend and frontend to
+                boost measurable progress.
+              </li>
+            </ul>
+          </div>
+
+          <aside className="col-span-1 bg-slate-50 rounded-lg p-4 dark:bg-zinc-800">
+            <h3 className="text-sm font-medium mb-2">Profile</h3>
+            <div className="text-sm text-muted-foreground">
+              {user?.name || "Nama Pengguna"}
+            </div>
+            <div className="text-xs text-muted-foreground mt-2">
+              Goal: {user?.personalGoal || "-"}
+            </div>
+          </aside>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
